@@ -11,9 +11,12 @@ public class PlayerMovement : MonoBehaviour {
     float yMove = 0f; 
     bool jumping = false;
 
+    //BoxCollider2D topCollider = GetComponent<BoxCollider2D>();
+    //CircleCollider2D bottomCollider = GetComponent<CircleCollider2D>();
+
     // Start is called before the first frame update
     void Start() {
-
+	
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        controller.Move(hMove * runSpeed * Time.fixedDeltaTime, yMove == -1, jumping);
+        controller.Move(hMove * runSpeed * Time.fixedDeltaTime, false, jumping);
         jumping = false;
     }
 }
