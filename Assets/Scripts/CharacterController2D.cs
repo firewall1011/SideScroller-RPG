@@ -127,8 +127,9 @@ public class CharacterController2D : MonoBehaviour
 		if (m_Grounded && jump)
 		{
 			// Add a vertical force to the player.
-			m_Grounded = false;
+            //if(Mathf.Abs(m_Rigidbody2D.velocity.y) <= 0.2f) fixes double jump on platforms, but cannot jump on slopes
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			//m_Grounded = false;
 		}
 	}
 

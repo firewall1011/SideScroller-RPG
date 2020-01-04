@@ -6,12 +6,19 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour {
 
     public CharacterController2D controller;
+
+    private Animator animator;
     
-    float runSpeed = 40f;
-    float hMove = 0f; 
-    float yMove = 0f; 
-    bool jumping = false;
-    bool crouching = false;
+    private float runSpeed = 40f;
+    private float hMove = 0f; 
+    private float yMove = 0f; 
+    private bool jumping = false;
+    private bool crouching = false;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void OnMove(InputValue input)
     {
@@ -21,6 +28,13 @@ public class PlayerMovement : MonoBehaviour {
     public void OnJump()
     {
         jumping = true;
+        animator.SetBool("isJumping", true);
+    }
+
+    public void OnLand()
+    {
+        animator.SetBool("isJumping", false);
+        Debug.Log("Landing");
     }
 
     public void OnCrouch()
@@ -29,7 +43,9 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        controller.Move(hMove * runSpeed * Time.fixedDeltaTime, false, jumping);
+        float currentSpeed = hMove * runSpeed * Time.fixedDeltaTime;
+        controller.Move(currentSpeed, false, jumping);
+        animator.SetFloat("Speed", Mathf.Abs(currentSpeed));
         jumping = false;
         crouching = false;
     }
