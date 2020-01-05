@@ -9,14 +9,13 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     
-    // Start is called before the first frame update
     public void OnAttack() {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in enemies) {
-            Debug.Log("hit");
+            enemy.GetComponent<IDamagable>().tryHit(1f);
         }
     }
-    
+
     void OnDrawGizmosSelected() {
         if (attackPoint == null) {
             return;
