@@ -616,5 +616,9 @@ PlayerSettings:
   organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 1
+<<<<<<< HEAD
   disableOldInputManagerSupport: 1
+=======
+  disableOldInputManagerSupport: 0
+>>>>>>> animation-system
   legacyClampBlendShapeWeights: 0

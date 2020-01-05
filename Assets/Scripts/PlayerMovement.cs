@@ -33,6 +33,11 @@ public class PlayerMovement : MonoBehaviour {
         jumping = true;
     }
 
+    public void OnLand()
+    {
+        Debug.Log("Landing");
+    }
+
     public void OnCrouch() {
         if (!runningJumpOff && rb.velocity.y == 0) {
             StartCoroutine ("JumpOff");
