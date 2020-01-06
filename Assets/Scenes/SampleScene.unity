@@ -806,18 +806,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7374052332764624835}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &490864237 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1316224117089412942, guid: 6b9a7f2c4fb5f244c8af8fb92ffe477a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7374052332764624835}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91af81fdc3c4f06d89d33c8ad90a9e6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,36 +1313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1079352388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1079352389}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1079352389
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079352388}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0404892, y: -1.6797079, z: -0.32462016}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123956265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,16 +1917,6 @@ PrefabInstance:
         type: 3}
       propertyPath: platforms
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374052332395846137, guid: 6b9a7f2c4fb5f244c8af8fb92ffe477a,
-        type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 490864237}
-    - target: {fileID: 7374052332395846133, guid: 6b9a7f2c4fb5f244c8af8fb92ffe477a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7374052332395846143, guid: 6b9a7f2c4fb5f244c8af8fb92ffe477a,
         type: 3}

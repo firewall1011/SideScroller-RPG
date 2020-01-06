@@ -8,6 +8,10 @@ public class BasicEnemyAI : MonoBehaviour
     public float lookRadius = 5f;
     public LayerMask targetLayers;
     public MovementController controller;
+    public float attackRate = 1f;
+    public float attackDamage = 1f;
+
+    private float nextAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,12 @@ public class BasicEnemyAI : MonoBehaviour
             // Debug.Log("y: " + dirY);
             
             controller.Move(dirX, dirY > 0, dirY < 0);
+
+            if (dirX == 0 && dirY == 0 && Time.time > nextAttack) {
+
+                target.GetComponent<IDamagable>().tryHit(attackDamage);
+                nextAttack = Time.time + 1f / attackRate;
+            }
         }
     }    
 
