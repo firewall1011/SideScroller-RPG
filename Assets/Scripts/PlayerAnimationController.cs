@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private Animator animator;
-    private PlayerMovement playerMovement;
+    private MovementController playerMovement;
     private PlayerCombat playerCombat;
     private HealthSystem healthSystem;
 
@@ -14,7 +14,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         //Get Components
         animator = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<MovementController>();
         playerCombat = GetComponent<PlayerCombat>();
         healthSystem = GetComponent<HealthSystem>();
 
