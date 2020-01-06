@@ -8,18 +8,6 @@ public class BasicEnemyAI : MonoBehaviour
     public float lookRadius = 5f;
     public LayerMask targetLayers;
     public MovementController controller;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     void FixedUpdate() {
         Collider2D[] allTargets = Physics2D.OverlapCircleAll(transform.position, lookRadius, targetLayers);
