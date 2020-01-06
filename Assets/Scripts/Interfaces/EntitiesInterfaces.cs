@@ -7,7 +7,7 @@ using UnityEngine;
 public interface IDamagable
 {
     void tryHit(float damage);
-    event Action<float> onDamage;
+    event Action onDamageTaken;
 }
 
 public interface IHealth

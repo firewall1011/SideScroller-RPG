@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour, IDamagable, IHealth
 {
-    public event Action<float> onDamage;
     public event Action<float> onHealthChange;
+    public event Action onDamageTaken;
     public event Action onDeath;
 
     [Header("Health Properties")]
@@ -37,7 +37,7 @@ public class HealthSystem : MonoBehaviour, IDamagable, IHealth
             onDeath?.Invoke();
 
         //Invoke onDamage and onHealthChange events
-        onDamage?.Invoke(damage);
+        onDamageTaken?.Invoke();
         onHealthChange?.Invoke(healthPercent);
     }
 

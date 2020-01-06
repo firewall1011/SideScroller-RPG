@@ -1,9 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
+
+    //IMovable
+    public event Action<bool> onJumpEvent;
+    public event Action<float> onMoveEvent;
+    public event Action onCrouchEvent;
 
     // public CharacterController2D controller;
     public Collider2D platforms;
@@ -35,12 +40,13 @@ public class PlayerMovement : MonoBehaviour {
 
     public void OnLand()
     {
-        Debug.Log("Landing");
+        onJumpEvent?.Invoke(false);
     }
 
     public void OnCrouch() {
         if (!runningJumpOff && rb.velocity.y == 0) {
             StartCoroutine ("JumpOff");
+            onCrouchEvent?.Invoke();
         }
     }
 
@@ -54,13 +60,18 @@ public class PlayerMovement : MonoBehaviour {
         float move = hMove * runSpeed * Time.fixedDeltaTime;
         Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothing);
-        
+        onMoveEvent?.Invoke(Mathf.Abs(rb.velocity.x));
+
+        if (rb.velocity.y == 0)
+            onJumpEvent?.Invoke(false);
         if (jumping && rb.velocity.y == 0) {
             rb.AddForce(new Vector2(0f, jumpForce));
+            onJumpEvent?.Invoke(true);
         }
     
 
         jumping = false;
+
     }
 
     

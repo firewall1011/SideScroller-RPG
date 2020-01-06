@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class DestructableObject : MonoBehaviour, IDamagable
 {
-    public event Action<float> onDamage;
+    public event Action onDamageTaken;
 
     public void tryHit(float damage)
     {
-        onDamage?.Invoke(damage);
+        onDamageTaken?.Invoke();
         Destroy(gameObject);
     }
 }
