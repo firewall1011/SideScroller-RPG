@@ -8,6 +8,7 @@ public class BasicEnemyAI : MonoBehaviour
     public float lookRadius = 5f;
     public LayerMask targetLayers;
     public MovementController controller;
+<<<<<<< HEAD
     public float attackRate = 1f;
     public float attackDamage = 1f;
 
@@ -24,6 +25,8 @@ public class BasicEnemyAI : MonoBehaviour
     {
         
     }
+=======
+>>>>>>> 2f8f00fb7651c4946cf1bbe296b25eb8b25e7e10
     
     void FixedUpdate() {
         Collider2D[] allTargets = Physics2D.OverlapCircleAll(transform.position, lookRadius, targetLayers);
