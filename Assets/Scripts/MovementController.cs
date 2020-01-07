@@ -90,7 +90,7 @@ public class MovementController : MonoBehaviour {
     void Flip() {
         if (hMove != 0 && facingDir != hMove) {
             facingDir = hMove;
-            transform.localScale = new Vector3(hMove, 1, 1);
+            transform.localScale = new Vector3(hMove / Mathf.Abs(hMove), 1, 1);
         }
     }
 }
