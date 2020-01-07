@@ -323,8 +323,6 @@ MonoBehaviour:
   runSpeed: 40
   movementSmoothing: 0.05
   jumpForce: 700
-  platforms: {fileID: 1282542557343542672, guid: a8aa544ebcb27ab1e8464dab0d0b5283,
-    type: 3}
 --- !u!1 &7374052332624929358
 GameObject:
   m_ObjectHideFlags: 0
