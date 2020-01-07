@@ -9,10 +9,17 @@ public class BasicEnemyAI : MonoBehaviour
     public LayerMask targetLayers;
     public MovementController controller;
 
-    public float attackRate = 1f;
-    public float attackDamage = 1f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-    private float nextAttack;
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     
     void FixedUpdate() {
         Collider2D[] allTargets = Physics2D.OverlapCircleAll(transform.position, lookRadius, targetLayers);
@@ -41,12 +48,6 @@ public class BasicEnemyAI : MonoBehaviour
             // Debug.Log("y: " + dirY);
             
             controller.Move(dirX, dirY > 0, dirY < 0);
-
-            if (dirX == 0 && dirY == 0 && Time.time > nextAttack) {
-
-                target.GetComponent<IDamagable>().tryHit(attackDamage);
-                nextAttack = Time.time + 1f / attackRate;
-            }
         }
     }    
 
