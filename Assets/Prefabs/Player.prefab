@@ -236,8 +236,7 @@ MonoBehaviour:
 --- !u!114 &7374052332395846137
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 3804504705461703770, guid: 8abbc46f52daf1f4f9825e2c235c0c84,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7374052332395846134}
@@ -264,7 +263,10 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 4096
-  attackRate: 2
+  attackRate: 3
+  attackDamage: 1
+  fireballPrefab: {fileID: 4687367566955990164, guid: 9f783819d5e721342a4ea3b19d08fdfb,
+    type: 3}
 --- !u!114 &7374052332395846138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ecc35344af39d94e98b04e03a534b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 20
 --- !u!95 &1514617936754108063
 Animator:
   serializedVersion: 3

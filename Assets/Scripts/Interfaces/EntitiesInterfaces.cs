@@ -21,6 +21,12 @@ public interface IHealth
 public interface IAttack
 {
     event Action onAttackEvent;
+    float AttackDamage { get; }
+}
+
+public interface ISkill
+{
+    event Action<int> onSkill;
 }
 
 public interface IMovable

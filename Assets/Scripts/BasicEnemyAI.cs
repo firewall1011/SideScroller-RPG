@@ -6,6 +6,7 @@ using UnityEngine;
 public class BasicEnemyAI : MonoBehaviour, IAttack
 {
     public event Action onAttackEvent;
+    public float AttackDamage => attackDamage;
 
     public float lookRadius = 5f;
     public LayerMask targetLayers;
@@ -15,7 +16,6 @@ public class BasicEnemyAI : MonoBehaviour, IAttack
     public float attackDamage = 1f;
 
     private float nextAttack;
-
 
     void FixedUpdate() {
         Collider2D[] allTargets = Physics2D.OverlapCircleAll(transform.position, lookRadius, targetLayers);

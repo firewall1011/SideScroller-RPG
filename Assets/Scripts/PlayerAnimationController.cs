@@ -29,9 +29,17 @@ public class PlayerAnimationController : MonoBehaviour
         playerMovement.onCrouchEvent += onCrouch;
         //Combat Listeners
         playerCombat.onAttackEvent += onAttack;
+        playerCombat.onSkill += onSkill;
         //Health Listeners
         healthSystem.onDamageTaken += onDamageTaken;
         healthSystem.onDeath += onDeath;
+    }
+
+    private void onSkill(int obj)
+    {
+        Debug.Log("onSkill_" + obj);
+        animator.SetTrigger("onSkill_" + obj);
+        animator.Play("Skill_" + obj);
     }
 
     #region Events

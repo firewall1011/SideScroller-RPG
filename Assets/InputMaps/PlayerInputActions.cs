@@ -49,6 +49,38 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""skill_0"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1103455-8023-4756-ae32-aff4df1fefe3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""skill_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b8577a41-47a6-4021-95bb-8a5f35515b26"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""skill_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6979f6f-48d2-4fda-8bea-8649c098c38d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""skill_3"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbbceb57-306a-4abf-8a74-4982cbf912da"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -216,6 +248,105 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21d6cea4-b9e9-4a9f-bfa4-d79d8fece52c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55359c80-a9b2-4f2d-926d-83600ececfee"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""skill_0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c72bce25-edd7-469d-b754-2d13b2cce541"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""skill_0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a52fe1f9-aeaf-4363-a76e-74ea5bde7240"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""skill_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d29194df-8b68-4f9e-aa21-723268f74443"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""skill_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c527774-453c-4eda-b874-c8071294f4d0"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""skill_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4e56bda-0f51-4fbd-9a65-a566802c45a6"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""skill_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd53e8d5-d4fc-4750-af93-7c12d3dde133"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""skill_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26934476-cf5a-4aaa-a427-6ac60de750b1"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""skill_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -251,6 +382,10 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_Crouch = m_PlayerActions.FindAction("Crouch", throwIfNotFound: true);
         m_PlayerActions_Attack = m_PlayerActions.FindAction("Attack", throwIfNotFound: true);
+        m_PlayerActions_skill_0 = m_PlayerActions.FindAction("skill_0", throwIfNotFound: true);
+        m_PlayerActions_skill_1 = m_PlayerActions.FindAction("skill_1", throwIfNotFound: true);
+        m_PlayerActions_skill_2 = m_PlayerActions.FindAction("skill_2", throwIfNotFound: true);
+        m_PlayerActions_skill_3 = m_PlayerActions.FindAction("skill_3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -304,6 +439,10 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_Jump;
     private readonly InputAction m_PlayerActions_Crouch;
     private readonly InputAction m_PlayerActions_Attack;
+    private readonly InputAction m_PlayerActions_skill_0;
+    private readonly InputAction m_PlayerActions_skill_1;
+    private readonly InputAction m_PlayerActions_skill_2;
+    private readonly InputAction m_PlayerActions_skill_3;
     public struct PlayerActionsActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -312,6 +451,10 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputAction @Crouch => m_Wrapper.m_PlayerActions_Crouch;
         public InputAction @Attack => m_Wrapper.m_PlayerActions_Attack;
+        public InputAction @skill_0 => m_Wrapper.m_PlayerActions_skill_0;
+        public InputAction @skill_1 => m_Wrapper.m_PlayerActions_skill_1;
+        public InputAction @skill_2 => m_Wrapper.m_PlayerActions_skill_2;
+        public InputAction @skill_3 => m_Wrapper.m_PlayerActions_skill_3;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -333,6 +476,18 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Attack.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnAttack;
+                @skill_0.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_0;
+                @skill_0.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_0;
+                @skill_0.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_0;
+                @skill_1.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_1;
+                @skill_1.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_1;
+                @skill_1.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_1;
+                @skill_2.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_2;
+                @skill_2.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_2;
+                @skill_2.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_2;
+                @skill_3.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_3;
+                @skill_3.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_3;
+                @skill_3.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkill_3;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -349,6 +504,18 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @skill_0.started += instance.OnSkill_0;
+                @skill_0.performed += instance.OnSkill_0;
+                @skill_0.canceled += instance.OnSkill_0;
+                @skill_1.started += instance.OnSkill_1;
+                @skill_1.performed += instance.OnSkill_1;
+                @skill_1.canceled += instance.OnSkill_1;
+                @skill_2.started += instance.OnSkill_2;
+                @skill_2.performed += instance.OnSkill_2;
+                @skill_2.canceled += instance.OnSkill_2;
+                @skill_3.started += instance.OnSkill_3;
+                @skill_3.performed += instance.OnSkill_3;
+                @skill_3.canceled += instance.OnSkill_3;
             }
         }
     }
@@ -377,5 +544,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnSkill_0(InputAction.CallbackContext context);
+        void OnSkill_1(InputAction.CallbackContext context);
+        void OnSkill_2(InputAction.CallbackContext context);
+        void OnSkill_3(InputAction.CallbackContext context);
     }
 }
