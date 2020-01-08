@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour {
+public class MovementController : MonoBehaviour, IMovable {
     //IMovable
     public event Action onCrouchEvent;
     public event Action<bool> onJumpEvent;

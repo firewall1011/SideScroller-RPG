@@ -137,6 +137,11 @@ PrefabInstance:
       propertyPath: smellRange
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1996206364888209715, guid: a29b7eea2d4a1d44db13dc4c4ba170c5,
+        type: 3}
+      propertyPath: attackRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2242339373856990964, guid: a29b7eea2d4a1d44db13dc4c4ba170c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,7 +922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000023841858, y: 0, z: -10}
+  m_LocalPosition: {x: -0.00000011920929, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 525270901}
@@ -1095,7 +1100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850155748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000023841858, y: 0, z: -10}
+  m_LocalPosition: {x: -0.00000011920929, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1029012075}
@@ -1165,6 +1170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: smellRange
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996206364888209715, guid: a29b7eea2d4a1d44db13dc4c4ba170c5,
+        type: 3}
+      propertyPath: attackRate
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2242339373856990964, guid: a29b7eea2d4a1d44db13dc4c4ba170c5,
         type: 3}
@@ -1769,6 +1779,11 @@ PrefabInstance:
       propertyPath: smellRange
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1996206364888209715, guid: a29b7eea2d4a1d44db13dc4c4ba170c5,
+        type: 3}
+      propertyPath: attackRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2242339373856990964, guid: a29b7eea2d4a1d44db13dc4c4ba170c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1922,6 +1937,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attackRate
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374052332395846138, guid: 6b9a7f2c4fb5f244c8af8fb92ffe477a,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 9999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b9a7f2c4fb5f244c8af8fb92ffe477a, type: 3}

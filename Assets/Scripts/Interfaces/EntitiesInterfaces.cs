@@ -15,5 +15,17 @@ public interface IHealth
     event Action<float> onHealthChange;
     event Action onDeath;
 
-    float healthPercent { get; }
+    float HealthPercent { get; }
+}
+
+public interface IAttack
+{
+    event Action onAttackEvent;
+}
+
+public interface IMovable
+{
+    event Action onCrouchEvent;
+    event Action<bool> onJumpEvent;
+    event Action<float> onMoveEvent;
 }
