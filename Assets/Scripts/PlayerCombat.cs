@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerCombat : MonoBehaviour
+public class PlayerCombat : MonoBehaviour, IAttack
 {
     public event System.Action onAttackEvent;
     

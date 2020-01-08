@@ -229,14 +229,15 @@ MonoBehaviour:
     m_ActionId: c5ea93dc-4a2c-4726-bc32-2f8370b7b65b
     m_ActionName: Movement/Movement
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7374052332395846137
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3804504705461703770, guid: 8abbc46f52daf1f4f9825e2c235c0c84,
+    type: 3}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7374052332395846134}
@@ -263,7 +264,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 4096
-  attackRate: 3
+  attackRate: 2
 --- !u!114 &7374052332395846138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +354,7 @@ Transform:
   m_Father: {fileID: 7374052332395846132}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7374052331932318625
+--- !u!1001 &4255193699759403496
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

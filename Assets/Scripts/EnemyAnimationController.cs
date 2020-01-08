@@ -9,7 +9,7 @@ public class EnemyAnimationController : MonoBehaviour
     private Animator animator;
     private MovementController enemyMovement;
     private HealthSystem healthSystem;
-    //private EnemyCombat enemyCombat;
+    private IAttack enemyCombat;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class EnemyAnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
         enemyMovement = GetComponent<MovementController>();
         healthSystem = GetComponent<HealthSystem>();
-        //playerCombat = GetComponent<PlayerCombat>();
+        enemyCombat = GetComponent<BasicEnemyAI>();
 
         SubscribeListeners();
     }
@@ -29,7 +29,7 @@ public class EnemyAnimationController : MonoBehaviour
         enemyMovement.onMoveEvent += onMove;
         enemyMovement.onCrouchEvent += onCrouch;
         //Combat Listeners
-        //playerCombat.onAttackEvent += onAttack;
+        enemyCombat.onAttackEvent += onAttack;
         //Health Listeners
         healthSystem.onDamageTaken += onDamageTaken;
         healthSystem.onDeath += onDeath;

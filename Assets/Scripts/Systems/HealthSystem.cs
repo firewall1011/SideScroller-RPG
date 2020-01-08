@@ -12,7 +12,7 @@ public class HealthSystem : MonoBehaviour, IDamagable, IHealth
     [Header("Health Properties")]
     [SerializeField] private float MaxHealth = 0f;
     private float health = 0f;
-    public float healthPercent => health / MaxHealth;
+    public float HealthPercent => health / MaxHealth;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class HealthSystem : MonoBehaviour, IDamagable, IHealth
 
         //Invoke onDamage and onHealthChange events
         onDamageTaken?.Invoke();
-        onHealthChange?.Invoke(healthPercent);
+        onHealthChange?.Invoke(HealthPercent);
     }
 
     private void OnDestroy()

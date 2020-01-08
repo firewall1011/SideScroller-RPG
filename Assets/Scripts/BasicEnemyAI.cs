@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemyAI : MonoBehaviour
+public class BasicEnemyAI : MonoBehaviour, IAttack
 {
+    public event Action onAttackEvent;
 
     public float lookRadius = 5f;
     public LayerMask targetLayers;
@@ -13,7 +15,8 @@ public class BasicEnemyAI : MonoBehaviour
     public float attackDamage = 1f;
 
     private float nextAttack;
-    
+
+
     void FixedUpdate() {
         Collider2D[] allTargets = Physics2D.OverlapCircleAll(transform.position, lookRadius, targetLayers);
 
@@ -46,6 +49,7 @@ public class BasicEnemyAI : MonoBehaviour
 
                 target.GetComponent<IDamagable>().tryHit(attackDamage);
                 nextAttack = Time.time + 1f / attackRate;
+                onAttackEvent?.Invoke();
             }
         }
     }    
