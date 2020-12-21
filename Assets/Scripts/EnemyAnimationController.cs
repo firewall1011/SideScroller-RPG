@@ -15,9 +15,9 @@ public class EnemyAnimationController : MonoBehaviour
     {
         //Get Components
         animator = GetComponent<Animator>();
-        enemyMovement = GetComponent<MovementController>();
-        healthSystem = GetComponent<HealthSystem>();
-        enemyCombat = GetComponent<BasicEnemyAI>();
+        enemyMovement = GetComponentInParent<MovementController>();
+        healthSystem = GetComponentInParent<HealthSystem>();
+        enemyCombat = GetComponentInParent<BasicEnemyAI>();
 
         SubscribeListeners();
     }
@@ -33,6 +33,11 @@ public class EnemyAnimationController : MonoBehaviour
         //Health Listeners
         healthSystem.onDamageTaken += onDamageTaken;
         healthSystem.onDeath += onDeath;
+    }
+
+    public void onAnimationEnded(int id)
+    {
+        //enemyCombat.afterSkillAnimation(id);
     }
 
     #region Events

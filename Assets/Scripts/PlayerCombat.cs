@@ -20,10 +20,6 @@ public class PlayerCombat : MonoBehaviour, IAttack, ISkill
 
     public void OnAttack() {
         if (Time.time >= nextAttack) {
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-            foreach (Collider2D enemy in enemies) {
-                enemy.GetComponent<IDamagable>().tryHit(attackDamage);
-            }
             onAttackEvent?.Invoke();
             
             nextAttack = Time.time + 1f / attackRate;
@@ -32,11 +28,18 @@ public class PlayerCombat : MonoBehaviour, IAttack, ISkill
 
     public void afterSkillAnimation(int type)
     {
-        ProjectileSkill fireball = ProjectileSkill.MakeProjectileSkill(fireballPrefab, transform.position + new Vector3(0, -0.75f, 0f), transform.rotation, transform.localScale);
-        fireball.SetSpeed(5f);
         switch (type)
         {
             case 0:
+                Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+                foreach (Collider2D enemy in enemies)
+                {
+                    enemy.GetComponent<IDamagable>().tryHit(attackDamage);
+                }
+                break;
+            case 1:
+                ProjectileSkill fireball = ProjectileSkill.MakeProjectileSkill(fireballPrefab, transform.position + new Vector3(0, -0.75f, 0f), attackPoint.transform.rotation, attackPoint.transform.localScale);
+                fireball.SetSpeed(5f*Mathf.Sign(attackPoint.rotation.y));
                 fireball.onTriggerEnterEvent += (collision) =>
                 {
                     if (!collision.CompareTag("Enemy")) return;
@@ -44,13 +47,15 @@ public class PlayerCombat : MonoBehaviour, IAttack, ISkill
                     Destroy(fireball.gameObject);
                 };
                 break;
-            case 1:
-                fireball.transform.localScale *= 2;
-                fireball.onTriggerEnterEvent += (collision) =>
+            case 2:
+                ProjectileSkill fireball2 = ProjectileSkill.MakeProjectileSkill(fireballPrefab, transform.position + new Vector3(0, -0.75f, 0f), attackPoint.transform.rotation, attackPoint.transform.localScale);
+                fireball2.SetSpeed(5f * Mathf.Sign(attackPoint.rotation.y));
+                fireball2.transform.localScale *= 2;
+                fireball2.onTriggerEnterEvent += (collision) =>
                 {
                     if (!collision.CompareTag("Enemy")) return;
                     collision.GetComponent<HealthSystem>()?.tryHit(attackDamage * 5);
-                    Destroy(fireball.gameObject);
+                    Destroy(fireball2.gameObject);
                 };
                 break;
             default:

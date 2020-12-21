@@ -26,26 +26,24 @@ public class BasicEnemyAI : MonoBehaviour, IAttack
         foreach (Collider2D target in allTargets) {
             Vector3 targetPos = target.transform.position;
             Vector3 pos = transform.position;
-    
-            float dirX = (targetPos.x - pos.x);
-            if (Mathf.Abs(dirX) >= 1.0f)
-                dirX /= Mathf.Abs(dirX);
+
+            Vector2 dir = targetPos - pos;
+            if (Mathf.Abs(dir.x) >= 1.0f)
+                dir.x /= Mathf.Abs(dir.x);
             else
-                dirX = 0;
-
-            float dirY = (targetPos.y - pos.y);
-
-            if (Mathf.Abs(dirY) >= 1.0f) 
-                dirY /= Mathf.Abs(dirY);
+                dir.x = 0;
+            
+            if (Mathf.Abs(dir.y) >= 1.0f) 
+                dir.y /= Mathf.Abs(dir.y);
             else
-                dirY = 0;
+                dir.y = 0;
 
-            // Debug.Log("x: " + dirX);
+            Debug.Log("x: " + dir.x);
             // Debug.Log("y: " + dirY);
             
-            controller.Move(dirX, dirY > 0, dirY < 0);
+            controller.Move(dir.x, dir.y > 0f, dir.y < 0f);
 
-            if (dirX == 0 && dirY == 0 && Time.time > nextAttack) {
+            if (dir.x == 0 && dir.y == 0 && Time.time > nextAttack) {
 
                 target.GetComponent<IDamagable>().tryHit(attackDamage);
                 nextAttack = Time.time + 1f / attackRate;

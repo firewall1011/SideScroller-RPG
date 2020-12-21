@@ -13,13 +13,6 @@ public class PlayerMovement : MonoBehaviour {
     bool jumpingOff = false;
     
 
-    // Rigidbody2D rb;
-
-
-    void Start() {
-        // rb = GetComponent<Rigidbody2D>();
-    }
-
     public void OnMove(InputValue input) {
         hMove = input.Get<float>();
     }
@@ -28,28 +21,12 @@ public class PlayerMovement : MonoBehaviour {
         jumping = true;
     }
 
-    // public void OnLand()
-    // {
-    //     onJumpEvent?.Invoke(false);
-    // }
-
     public void OnCrouch() {
         jumpingOff = true;
     }
 
     void FixedUpdate() {
-        // Flip();  
-        
-        controller.Move(hMove, jumping, jumpingOff);      
-
-        // onMoveEvent?.Invoke(Mathf.Abs(rb.velocity.x));
-
-        // if (rb.velocity.y == 0)
-        //     onJumpEvent?.Invoke(false);
-        // if (jumping && rb.velocity.y == 0) {
-        //     onJumpEvent?.Invoke(true);
-        // }
-    
+        controller.Move(hMove, jumping, jumpingOff);
 
         jumping = false;
         jumpingOff = false;

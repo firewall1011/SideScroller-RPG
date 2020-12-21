@@ -14,9 +14,9 @@ public class PlayerAnimationController : MonoBehaviour
     {
         //Get Components
         animator = GetComponent<Animator>();
-        playerMovement = GetComponent<MovementController>();
-        playerCombat = GetComponent<PlayerCombat>();
-        healthSystem = GetComponent<HealthSystem>();
+        playerMovement = GetComponentInParent<MovementController>();
+        playerCombat = GetComponentInParent<PlayerCombat>();
+        healthSystem = GetComponentInParent<HealthSystem>();
 
         SubscribeListeners();
     }
@@ -38,8 +38,13 @@ public class PlayerAnimationController : MonoBehaviour
     private void onSkill(int obj)
     {
         Debug.Log("onSkill_" + obj);
-        animator.SetTrigger("onSkill_" + obj);
+        //animator.SetTrigger("onSkill_" + obj);
         animator.Play("Skill_" + obj);
+    }
+
+    public void onAnimationEnded(int id)
+    {
+        playerCombat.afterSkillAnimation(id);
     }
 
     #region Events

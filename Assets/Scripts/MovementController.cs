@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour, IMovable {
     
     private bool runningJumpOff = false;
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     private Collider2D[] platforms;
     
     private float hMove = 0;
@@ -26,6 +27,7 @@ public class MovementController : MonoBehaviour, IMovable {
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Platform");
         
         platforms = new Collider2D[gos.Length];
@@ -90,7 +92,7 @@ public class MovementController : MonoBehaviour, IMovable {
     void Flip() {
         if (hMove != 0 && facingDir != hMove) {
             facingDir = hMove;
-            transform.localScale = new Vector3(hMove / Mathf.Abs(hMove), 1, 1);
+            spriteRenderer.transform.Rotate(0f, 180 * Mathf.Sign(hMove), 0f);
         }
     }
 }
